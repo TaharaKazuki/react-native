@@ -17,12 +17,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   leftContainer: {
-    backgroundColor: 'red',
     width: 100
   },
   rightContainer: {
-    backgroundColor: 'blue',
-    flex: 1
+    flex: 1,
+    padding: 10,
+    justifyContent: 'space-between'
+  },
+  text: {
+    fontSize: 16
+  },
+  subText: {
+    fontSize: 14
   }
 })
 
@@ -36,7 +42,13 @@ export default function App() {
             source={{ uri: 'https://picsum.photos/id/10/200/200' }}
           />
         </View>
-        <View style={styles.rightContainer} />
+        <View style={styles.rightContainer} >
+          <Text numberOfLines={3} style={styles.text}>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaa
+          </Text>
+          <Text style={styles.subText}>React News</Text>
+        </View>
       </View>
     </View>
   )
