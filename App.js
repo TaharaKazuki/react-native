@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native'
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native'
 import ListItem from './components/ListItem'
 import articles from './dummies/articles.json'
 
