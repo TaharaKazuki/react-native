@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const HomeScreen = () => {
             imageUrl={item.urlToImage}
             title={item.title}
             author={item.author}
+            onPress={() => navigation.navigate('Article')}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
