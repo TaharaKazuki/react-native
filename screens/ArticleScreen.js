@@ -1,12 +1,18 @@
-import React from "react";
-import { StyleSheet, SafeAreaView, Text, TouchableOpacity } from "react-native";
+import React from 'react'
+import {
+  StyleSheet,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View
+} from 'react-native'
 import { WebView } from 'react-native-webview'
-import { connect } from "react-redux";
+// import { connect } from 'react-redux'
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff'
   }
 })
 
@@ -16,10 +22,7 @@ const ArticleScreen = (props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity>
-        
-      </TouchableOpacity>
-      
+      <WebView source={{ uri: article.url }} />
     </SafeAreaView>
   )
 }
