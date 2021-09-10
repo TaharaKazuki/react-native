@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import { StyleSheet, FlatList, SafeAreaView } from 'react-native'
 import axios from 'axios'
 import Constants from 'expo-constants'
@@ -14,7 +13,7 @@ const styles = StyleSheet.create({
   }
 })
 
-export default HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
@@ -47,3 +46,5 @@ export default HomeScreen = ({navigation}) => {
     </SafeAreaView>
   )
 }
+
+export default HomeScreen
