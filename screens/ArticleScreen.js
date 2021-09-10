@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text } from "react-native";
+import { StyleSheet, SafeAreaView, Text, TouchableOpacity } from "react-native";
+import { WebView } from 'react-native-webview'
+import { connect } from "react-redux";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,10 +10,16 @@ const styles = StyleSheet.create({
   }
 })
 
-const ArticleScreen = () => {
+const ArticleScreen = (props) => {
+  const { route, addClip, deleteClip } = props
+  const { article } = route.params
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>This is Article</Text>
+      <TouchableOpacity>
+        
+      </TouchableOpacity>
+      
     </SafeAreaView>
   )
 }
