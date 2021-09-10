@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, FlatList, SafeAreaView } from 'react-native'
 import axios from 'axios'
 import Constants from 'expo-constants'
-import ListItem from './components/ListItem'
+import ListItem from '../components/ListItem'
 
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=${Constants.manifest.extra.newsApiKey}`
 
