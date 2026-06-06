@@ -36,8 +36,8 @@ Expo + TypeScript で構築する React Native モバイルアプリです。
 
 - ベースブランチは **`main`**（`master` ではない）。
 - 変更は新しいブランチを切ってから行い、PR ベースで進める。
-- **commit / push は Claude が自動で行わない**。ユーザーが手動で実行する運用。
-  PreToolUse フック（`.claude/hooks/block-git-write.sh`）が `git commit` / `git push` をブロックする。
+- **commit / push は Claude が「勝手に」行わない**。PreToolUse フック（`.claude/hooks/block-git-write.sh`）が
+  `git commit` / `git push` を検知すると確認プロンプト（ask）を出す。ユーザーが承認すれば実行される。
 - パッケージマネージャは **npm**。yarn は使わない。
 - 破壊的な操作（ファイル一括削除、force push 等）の前に必ず確認する。
 
