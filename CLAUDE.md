@@ -9,19 +9,19 @@ Expo + TypeScript で構築する React Native モバイルアプリです。
 
 - **フレームワーク**: Expo (managed workflow)
 - **言語**: TypeScript
-- **パッケージマネージャ**: yarn
+- **パッケージマネージャ**: npm
 
 ## よく使うコマンド
 
 | 目的 | コマンド |
 |---|---|
-| 開発サーバ起動 | `yarn start` |
-| iOS シミュレータ | `yarn ios` |
-| Android エミュレータ | `yarn android` |
-| Web | `yarn web` |
-| 型チェック | `yarn tsc --noEmit` |
-| Lint | `yarn lint` |
-| 依存追加 | `yarn add <pkg>` / `yarn add -D <pkg>` |
+| 開発サーバ起動 | `npm start` |
+| iOS シミュレータ | `npm run ios` |
+| Android エミュレータ | `npm run android` |
+| Web | `npm run web` |
+| 型チェック | `npx tsc --noEmit` |
+| Lint | `npm run lint` |
+| 依存追加 | `npm install <pkg>` / `npm install -D <pkg>` |
 
 > スキャフォールド後、`package.json` の scripts に合わせて上記を更新すること。
 
@@ -36,7 +36,9 @@ Expo + TypeScript で構築する React Native モバイルアプリです。
 
 - ベースブランチは **`main`**（`master` ではない）。
 - 変更は新しいブランチを切ってから行い、PR ベースで進める。
-- コミットメッセージは簡潔な現在形で。
+- **commit / push は Claude が自動で行わない**。ユーザーが手動で実行する運用。
+  PreToolUse フック（`.claude/hooks/block-git-write.sh`）が `git commit` / `git push` をブロックする。
+- パッケージマネージャは **npm**。yarn は使わない。
 - 破壊的な操作（ファイル一括削除、force push 等）の前に必ず確認する。
 
 ## ディレクトリ構成（予定）
