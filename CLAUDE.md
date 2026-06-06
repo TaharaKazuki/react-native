@@ -5,11 +5,15 @@
 ## プロジェクト概要
 
 Expo + TypeScript で構築する React Native モバイルアプリです。
-（雛形はこれから作成します。スキャフォールド後にディレクトリ構成・主要モジュールをこのファイルへ追記してください。）
+`create-expo-app`（blank-typescript テンプレート）で雛形を作成済み。
 
-- **フレームワーク**: Expo (managed workflow)
-- **言語**: TypeScript
+- **フレームワーク**: Expo SDK **56**（managed workflow）
+- **言語**: TypeScript（strict）/ React 19・React Native 0.85
 - **パッケージマネージャ**: npm
+- **エントリ**: `index.ts` が `App.tsx` を `registerRootComponent` で登録
+
+> Expo は破壊的変更が多い。コードを書く前に対象バージョンの公式ドキュメント
+> （https://docs.expo.dev/versions/v56.0.0/ ）を確認すること（`AGENTS.md` 参照）。
 
 ## よく使うコマンド
 
@@ -20,10 +24,9 @@ Expo + TypeScript で構築する React Native モバイルアプリです。
 | Android エミュレータ | `npm run android` |
 | Web | `npm run web` |
 | 型チェック | `npx tsc --noEmit` |
-| Lint | `npm run lint` |
 | 依存追加 | `npm install <pkg>` / `npm install -D <pkg>` |
 
-> スキャフォールド後、`package.json` の scripts に合わせて上記を更新すること。
+> Lint は未導入（`package.json` の scripts に `lint` は無い）。導入したらこの表に追記すること。
 
 ## コーディング規約
 
@@ -41,18 +44,30 @@ Expo + TypeScript で構築する React Native モバイルアプリです。
 - パッケージマネージャは **npm**。yarn は使わない。
 - 破壊的な操作（ファイル一括削除、force push 等）の前に必ず確認する。
 
-## ディレクトリ構成（予定）
+## ディレクトリ構成
+
+現状（スキャフォールド直後のフラット構成）:
 
 ```
 .
-├── App.tsx              # エントリポイント
-├── src/
-│   ├── components/      # 再利用可能な UI コンポーネント
-│   ├── screens/         # 画面単位のコンポーネント
-│   ├── navigation/      # React Navigation 設定
-│   ├── store/           # 状態管理
-│   └── types/           # 共通型定義
-└── assets/              # 画像・フォント等
+├── index.ts             # エントリ（App を registerRootComponent で登録）
+├── App.tsx              # ルートコンポーネント（ここから実装を始める）
+├── app.json             # Expo 設定（アプリ名・アイコン・各プラットフォーム設定）
+├── tsconfig.json        # expo/tsconfig.base を継承 + strict
+├── assets/              # 画像・アイコン等
+├── AGENTS.md            # Expo バージョン注意書き
+└── package.json
+```
+
+今後の拡張方針（コードが増えてきたら導入。**設計は本人が決める**）:
+
+```
+src/
+├── components/      # 再利用可能な UI コンポーネント
+├── screens/         # 画面単位のコンポーネント
+├── navigation/      # 画面遷移（Expo Router or React Navigation）
+├── store/           # 状態管理
+└── types/           # 共通型定義
 ```
 
 > 実際の構成が固まったらこのセクションを更新すること。

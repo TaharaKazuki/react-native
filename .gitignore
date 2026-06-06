@@ -41,3 +41,7 @@ yarn-error.*
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# Native (Expo template 由来の追加)
+.kotlin/
+*.pem
